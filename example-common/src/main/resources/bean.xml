@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd"
+	default-autowire="byName">
+
+	<!-- 使用annotation 自动注册bean,并保证@Required,@Autowired的属性被注入 -->
+	<context:component-scan base-package="com.caixin.transfer" />
+
+	<bean id="velocityEngine"
+		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="velocityProperties">
+			<props>
+				<prop key="resource.loader">class</prop>
+				<prop key="class.resource.loader.class">org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="qfsManager" class="com.qingfeng.common.fastdfs.DefaultQfsManager"
+		init-method="init">
+		<!-- WebService Root Server的地址（提供服务节点列表） (必须配置） -->
+		<property name="rsAddr">
+			<value>${fastdfs_url}</value>
+		</property>
+		<!-- 应用注册的App Key (必须配置） -->
+		<property name="appId">
+			<value>transferImageData</value>
+		</property>
+	</bean>
+	<!-- utility -->
+	<bean id="fileUploadUtil" class="com.qingfengapp.utility.util.FileUploadUtil" />
+
+	<bean id="springBeanFactory" class="com.caixin.transfer.util.SpringBeanFactory" />
+
+	<!-- 邮件 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host">
+			<value>${mail.host}</value>
+		</property>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
+				<prop key="mail.smtp.timeout">${mail.smtp.timeout}</prop>
+			</props>
+		</property>
+		<property name="username">
+			<value>${mail.username}</value>
+		</property>
+		<property name="password">
+			<value>${mail.password}</value>
+		</property>
+	</bean>
+	<bean id="sendMail" class="com.qingfengapp.utility.util.SendMail">
+		<property name="emailFrom" value="${mail.default.from}" />
+	</bean>
+
+	<!-- redis -->
+	<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxIdle" value="${redis.maxIdle}" />
+		<property name="testOnBorrow" value="true" />
+		<property name="testOnReturn" value="true" />
+	</bean>
+
+	<!-- spring data redis -->
+	<bean id="jedisConnFactory"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+		<property name="usePool" value="true"></property>
+		<property name="hostName" value="${redis.host}" />
+		<property name="port" value="${redis.port}" />
+		<property name="password" value="${redis.pass}" />
+		<property name="timeout" value="${redis.timeout}" />
+		<constructor-arg index="0" ref="jedisPoolConfig" />
+	</bean>
+
+	<bean id="stringRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
+        <property name="connectionFactory" ref="jedisConnFactory" />
+    </bean>
+
+</beans>
+

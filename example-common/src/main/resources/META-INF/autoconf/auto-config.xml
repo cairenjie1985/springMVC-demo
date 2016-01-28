@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<group>
+		<!-- mail -->
+		<property name="mail.host" description="邮箱host" />
+		<property name="mail.username" description="邮箱name"/>
+		<property name="mail.password" description="密码"/>
+		<property name="mail.smtp.auth" description="认证"/>
+		<property name="mail.smtp.timeout" description="超时时间"/>
+		<property name="mail.default.from" description="默认邮箱"/>
+		<!-- redis -->
+		<property name="redis.maxIdle" description="最大空闲数" />
+		<property name="redis.host" description="地址"/>
+		<property name="redis.port" description="端口号"/>
+		<property name="redis.pass" description="密码"/>
+		<property name="redis.timeout" description="链接超时"/>
+	</group>
+	<script>
+		<generate template="bean.xml" />
+	</script>
+</config>

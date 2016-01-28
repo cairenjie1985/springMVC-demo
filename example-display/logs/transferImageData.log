@@ -1,0 +1,250 @@
+0    INFO  [2016-01-28 09:29:45]  Root WebApplicationContext: initialization started
+99   INFO  [2016-01-28 09:29:45]  Refreshing Root WebApplicationContext: startup date [Thu Jan 28 09:29:45 CST 2016]; root of context hierarchy
+140  INFO  [2016-01-28 09:29:45]  Loading XML bean definitions from class path resource [com/config/test-applicationContext.xml]
+236  INFO  [2016-01-28 09:29:46]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-business/target/classes/bean.xml]
+361  INFO  [2016-01-28 09:29:46]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-dao/target/classes/bean.xml]
+380  INFO  [2016-01-28 09:29:46]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-common/target/classes/bean.xml]
+438  INFO  [2016-01-28 09:29:46]  Overriding bean definition for bean 'velocityEngine': replacing [Generic bean: class [org.springframework.ui.velocity.VelocityEngineFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=1; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/D:/WorkSpace/transferImageData/transfer-business/target/classes/bean.xml]] with [Generic bean: class [org.springframework.ui.velocity.VelocityEngineFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=1; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/D:/WorkSpace/transferImageData/transfer-common/target/classes/bean.xml]]
+609  WARN  [2016-01-28 09:29:46]  No MyBatis mapper was found in '[com.caixin.transfer.mapper.*]' package. Please check your configuration.
+811  INFO  [2016-01-28 09:29:46]  Loading properties file from file [D:\WorkSpace\transferImageData\transfer-display\target\classes\test-.properties]
+3431 INFO  [2016-01-28 09:29:49]  {dataSource-1} inited
+4172 WARN  [2016-01-28 09:29:50]  Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'bussProductServiceImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.caixin.transfer.mapper.BussProductInfoMapperExt com.caixin.transfer.biz.product.impl.BussProductServiceImpl.bussProductInfoMapperExt; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.caixin.transfer.mapper.BussProductInfoMapperExt] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:434)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:764)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:406)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:756)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:242)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:699)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:454)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:90)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:263)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:80)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.caixin.transfer.mapper.BussProductInfoMapperExt com.caixin.transfer.biz.product.impl.BussProductServiceImpl.bussProductInfoMapperExt; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.caixin.transfer.mapper.BussProductInfoMapperExt] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 25 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.caixin.transfer.mapper.BussProductInfoMapperExt] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1301)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1047)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 27 more
+4184 INFO  [2016-01-28 09:29:50]  {dataSource-1} closed
+4184 ERROR [2016-01-28 09:29:50]  Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'bussProductServiceImpl': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.caixin.transfer.mapper.BussProductInfoMapperExt com.caixin.transfer.biz.product.impl.BussProductServiceImpl.bussProductInfoMapperExt; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.caixin.transfer.mapper.BussProductInfoMapperExt] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:434)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:764)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:406)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:756)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:242)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:699)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:454)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:90)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:263)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:80)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.caixin.transfer.mapper.BussProductInfoMapperExt com.caixin.transfer.biz.product.impl.BussProductServiceImpl.bussProductInfoMapperExt; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.caixin.transfer.mapper.BussProductInfoMapperExt] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 25 more
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [com.caixin.transfer.mapper.BussProductInfoMapperExt] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1301)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1047)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 27 more
+0    INFO  [2016-01-28 10:18:54]  Root WebApplicationContext: initialization started
+93   INFO  [2016-01-28 10:18:54]  Refreshing Root WebApplicationContext: startup date [Thu Jan 28 10:18:54 CST 2016]; root of context hierarchy
+133  INFO  [2016-01-28 10:18:54]  Loading XML bean definitions from class path resource [com/config/test-applicationContext.xml]
+197  INFO  [2016-01-28 10:18:54]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-business/target/classes/bean.xml]
+321  INFO  [2016-01-28 10:18:54]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-dao/target/classes/bean.xml]
+339  INFO  [2016-01-28 10:18:55]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-common/target/classes/bean.xml]
+394  INFO  [2016-01-28 10:18:55]  Overriding bean definition for bean 'velocityEngine': replacing [Generic bean: class [org.springframework.ui.velocity.VelocityEngineFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=1; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/D:/WorkSpace/transferImageData/transfer-business/target/classes/bean.xml]] with [Generic bean: class [org.springframework.ui.velocity.VelocityEngineFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=1; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/D:/WorkSpace/transferImageData/transfer-common/target/classes/bean.xml]]
+756  INFO  [2016-01-28 10:18:55]  Loading properties file from file [D:\WorkSpace\transferImageData\transfer-display\target\classes\test-.properties]
+47698 ERROR [2016-01-28 10:19:42]  init datasource error, url: jdbc:mysql://192.168.1.233:3306/yx_dev?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 27,379 milliseconds ago.  The last packet sent successfully to the server was 27,379 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1117)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3567)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3456)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3997)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2468)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2629)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2713)
+	at com.mysql.jdbc.ConnectionImpl.setAutoCommit(ConnectionImpl.java:5060)
+	at com.mysql.jdbc.ConnectionImpl.initializePropsFromServer(ConnectionImpl.java:3577)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2445)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2215)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:813)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:399)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:334)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:148)
+	at com.alibaba.druid.filter.stat.StatFilter.connection_connect(StatFilter.java:211)
+	at com.alibaba.druid.filter.FilterChainImpl.connection_connect(FilterChainImpl.java:142)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1388)
+	at com.alibaba.druid.pool.DruidAbstractDataSource.createPhysicalConnection(DruidAbstractDataSource.java:1442)
+	at com.alibaba.druid.pool.DruidDataSource.init(DruidDataSource.java:632)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1702)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1641)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1570)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:351)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1477)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:434)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:306)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:106)
+	at org.eclipse.jetty.server.handler.ContextHandler.callContextInitialized(ContextHandler.java:764)
+	at org.eclipse.jetty.servlet.ServletContextHandler.callContextInitialized(ServletContextHandler.java:406)
+	at org.eclipse.jetty.server.handler.ContextHandler.startContext(ContextHandler.java:756)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:242)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:699)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:454)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.doStart(HandlerWrapper.java:90)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:263)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:59)
+	at runjettyrun.Bootstrap.main(Bootstrap.java:80)
+Caused by: java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:114)
+	at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:161)
+	at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:189)
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3014)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3467)
+	... 65 more
+47745 INFO  [2016-01-28 10:19:42]  {dataSource-1} inited
+49580 INFO  [2016-01-28 10:19:44]  Root WebApplicationContext: initialization completed in 49580 ms
+49644 INFO  [2016-01-28 10:19:44]  FrameworkServlet 'caixin': initialization started
+49647 INFO  [2016-01-28 10:19:44]  Refreshing WebApplicationContext for namespace 'caixin-servlet': startup date [Thu Jan 28 10:19:44 CST 2016]; parent: Root WebApplicationContext
+49648 INFO  [2016-01-28 10:19:44]  Loading XML bean definitions from ServletContext resource [/WEB-INF/spring_mvc.xml]
+50116 INFO  [2016-01-28 10:19:44]  ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+50236 INFO  [2016-01-28 10:19:44]  FrameworkServlet 'caixin': initialization completed in 591 ms
+0    INFO  [2016-01-28 10:20:03]  Root WebApplicationContext: initialization started
+95   INFO  [2016-01-28 10:20:03]  Refreshing Root WebApplicationContext: startup date [Thu Jan 28 10:20:03 CST 2016]; root of context hierarchy
+135  INFO  [2016-01-28 10:20:03]  Loading XML bean definitions from class path resource [com/config/test-applicationContext.xml]
+198  INFO  [2016-01-28 10:20:03]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-business/target/classes/bean.xml]
+320  INFO  [2016-01-28 10:20:03]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-dao/target/classes/bean.xml]
+339  INFO  [2016-01-28 10:20:03]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-common/target/classes/bean.xml]
+396  INFO  [2016-01-28 10:20:03]  Overriding bean definition for bean 'velocityEngine': replacing [Generic bean: class [org.springframework.ui.velocity.VelocityEngineFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=1; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/D:/WorkSpace/transferImageData/transfer-business/target/classes/bean.xml]] with [Generic bean: class [org.springframework.ui.velocity.VelocityEngineFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=1; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/D:/WorkSpace/transferImageData/transfer-common/target/classes/bean.xml]]
+785  INFO  [2016-01-28 10:20:03]  Loading properties file from file [D:\WorkSpace\transferImageData\transfer-display\target\classes\test-.properties]
+10590 INFO  [2016-01-28 10:20:13]  {dataSource-1} inited
+12197 INFO  [2016-01-28 10:20:15]  Root WebApplicationContext: initialization completed in 12196 ms
+12262 INFO  [2016-01-28 10:20:15]  FrameworkServlet 'caixin': initialization started
+12264 INFO  [2016-01-28 10:20:15]  Refreshing WebApplicationContext for namespace 'caixin-servlet': startup date [Thu Jan 28 10:20:15 CST 2016]; parent: Root WebApplicationContext
+12266 INFO  [2016-01-28 10:20:15]  Loading XML bean definitions from ServletContext resource [/WEB-INF/spring_mvc.xml]
+12649 INFO  [2016-01-28 10:20:15]  ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+12768 INFO  [2016-01-28 10:20:15]  FrameworkServlet 'caixin': initialization completed in 506 ms
+0    INFO  [2016-01-28 10:22:32]  Root WebApplicationContext: initialization started
+94   INFO  [2016-01-28 10:22:32]  Refreshing Root WebApplicationContext: startup date [Thu Jan 28 10:22:32 CST 2016]; root of context hierarchy
+133  INFO  [2016-01-28 10:22:32]  Loading XML bean definitions from class path resource [com/config/test-applicationContext.xml]
+199  INFO  [2016-01-28 10:22:32]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-business/target/classes/bean.xml]
+323  INFO  [2016-01-28 10:22:32]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-dao/target/classes/bean.xml]
+342  INFO  [2016-01-28 10:22:32]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-common/target/classes/bean.xml]
+398  INFO  [2016-01-28 10:22:32]  Overriding bean definition for bean 'velocityEngine': replacing [Generic bean: class [org.springframework.ui.velocity.VelocityEngineFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=1; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/D:/WorkSpace/transferImageData/transfer-business/target/classes/bean.xml]] with [Generic bean: class [org.springframework.ui.velocity.VelocityEngineFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=1; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/D:/WorkSpace/transferImageData/transfer-common/target/classes/bean.xml]]
+806  INFO  [2016-01-28 10:22:33]  Loading properties file from file [D:\WorkSpace\transferImageData\transfer-display\target\classes\test-.properties]
+32179 INFO  [2016-01-28 10:23:04]  {dataSource-1} inited
+33718 INFO  [2016-01-28 10:23:06]  Root WebApplicationContext: initialization completed in 33718 ms
+33782 INFO  [2016-01-28 10:23:06]  FrameworkServlet 'caixin': initialization started
+33784 INFO  [2016-01-28 10:23:06]  Refreshing WebApplicationContext for namespace 'caixin-servlet': startup date [Thu Jan 28 10:23:06 CST 2016]; parent: Root WebApplicationContext
+33785 INFO  [2016-01-28 10:23:06]  Loading XML bean definitions from ServletContext resource [/WEB-INF/spring_mvc.xml]
+34198 INFO  [2016-01-28 10:23:06]  ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+34313 INFO  [2016-01-28 10:23:06]  FrameworkServlet 'caixin': initialization completed in 531 ms
+0    INFO  [2016-01-28 10:25:36]  Root WebApplicationContext: initialization started
+92   INFO  [2016-01-28 10:25:36]  Refreshing Root WebApplicationContext: startup date [Thu Jan 28 10:25:36 CST 2016]; root of context hierarchy
+132  INFO  [2016-01-28 10:25:36]  Loading XML bean definitions from class path resource [com/config/test-applicationContext.xml]
+196  INFO  [2016-01-28 10:25:36]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-business/target/classes/bean.xml]
+325  INFO  [2016-01-28 10:25:36]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-dao/target/classes/bean.xml]
+343  INFO  [2016-01-28 10:25:36]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-common/target/classes/bean.xml]
+398  INFO  [2016-01-28 10:25:36]  Overriding bean definition for bean 'velocityEngine': replacing [Generic bean: class [org.springframework.ui.velocity.VelocityEngineFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=1; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/D:/WorkSpace/transferImageData/transfer-business/target/classes/bean.xml]] with [Generic bean: class [org.springframework.ui.velocity.VelocityEngineFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=1; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/D:/WorkSpace/transferImageData/transfer-common/target/classes/bean.xml]]
+802  INFO  [2016-01-28 10:25:37]  Loading properties file from file [D:\WorkSpace\transferImageData\transfer-display\target\classes\test-.properties]
+2590 INFO  [2016-01-28 10:25:39]  {dataSource-1} inited
+4110 INFO  [2016-01-28 10:25:40]  Root WebApplicationContext: initialization completed in 4110 ms
+4170 INFO  [2016-01-28 10:25:40]  FrameworkServlet 'caixin': initialization started
+4172 INFO  [2016-01-28 10:25:40]  Refreshing WebApplicationContext for namespace 'caixin-servlet': startup date [Thu Jan 28 10:25:40 CST 2016]; parent: Root WebApplicationContext
+4174 INFO  [2016-01-28 10:25:40]  Loading XML bean definitions from ServletContext resource [/WEB-INF/spring_mvc.xml]
+4560 INFO  [2016-01-28 10:25:40]  ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+4676 INFO  [2016-01-28 10:25:41]  FrameworkServlet 'caixin': initialization completed in 506 ms
+0    INFO  [2016-01-28 10:37:56]  Root WebApplicationContext: initialization started
+97   INFO  [2016-01-28 10:37:56]  Refreshing Root WebApplicationContext: startup date [Thu Jan 28 10:37:56 CST 2016]; root of context hierarchy
+137  INFO  [2016-01-28 10:37:56]  Loading XML bean definitions from class path resource [com/config/test-applicationContext.xml]
+201  INFO  [2016-01-28 10:37:56]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-business/target/classes/bean.xml]
+325  INFO  [2016-01-28 10:37:56]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-dao/target/classes/bean.xml]
+343  INFO  [2016-01-28 10:37:56]  Loading XML bean definitions from URL [file:/D:/WorkSpace/transferImageData/transfer-common/target/classes/bean.xml]
+403  INFO  [2016-01-28 10:37:56]  Overriding bean definition for bean 'velocityEngine': replacing [Generic bean: class [org.springframework.ui.velocity.VelocityEngineFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=1; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/D:/WorkSpace/transferImageData/transfer-business/target/classes/bean.xml]] with [Generic bean: class [org.springframework.ui.velocity.VelocityEngineFactoryBean]; scope=; abstract=false; lazyInit=false; autowireMode=1; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in URL [file:/D:/WorkSpace/transferImageData/transfer-common/target/classes/bean.xml]]
+804  INFO  [2016-01-28 10:37:57]  Loading properties file from file [D:\WorkSpace\transferImageData\transfer-display\target\classes\test-.properties]
+3043 INFO  [2016-01-28 10:37:59]  {dataSource-1} inited
+4578 INFO  [2016-01-28 10:38:00]  Root WebApplicationContext: initialization completed in 4577 ms
+4643 INFO  [2016-01-28 10:38:00]  FrameworkServlet 'caixin': initialization started
+4645 INFO  [2016-01-28 10:38:00]  Refreshing WebApplicationContext for namespace 'caixin-servlet': startup date [Thu Jan 28 10:38:00 CST 2016]; parent: Root WebApplicationContext
+4647 INFO  [2016-01-28 10:38:00]  Loading XML bean definitions from ServletContext resource [/WEB-INF/spring_mvc.xml]
+5059 INFO  [2016-01-28 10:38:01]  ClasspathResourceLoader with name 'springMacro' added to configured VelocityEngine
+5176 INFO  [2016-01-28 10:38:01]  FrameworkServlet 'caixin': initialization completed in 533 ms

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<group>
+		<property name="datasource.driverClassName" description="数据库驱动类型" />
+		<property name="datasource.url" description="数据库链接地址" />
+		<property name="datasource.username" description="用户名" />
+		<property name="datasource.password" description="用户名" />
+		<property name="minEvictableIdleTimeMillis" description="配置一个连接在池中最小生存的时间，单位是毫秒" />
+		<property name="maxPoolPreparedStatementPerConnectionSize" description="maxPoolPreparedStatementPerConnectionSize" />
+		<property name="testOnBorrow" description="申请连接时执行validationQuery检测连接是否有效，配置为true会降低性能" />
+		<property name="maxWait" description="配置获取连接等待超时的时间" />
+		<property name="testWhileIdle" description="申请连接的时候检测" />
+		<property name="maxActive" description="最大并发连接数" />
+		<property name="filters" description="属性类型是字符串，通过别名的方式配置扩展插件，常用的插件有： 监控统计用的filter:stat 日志用的filter:log4j 防御SQL注入的filter:wall" />
+		<property name="timeBetweenEvictionRunsMillis" description="配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒" />
+		<property name="poolPreparedStatements" description="打开PSCache，并且指定每个连接上PSCache的大小" />
+		<property name="initialSize" description="初始化连接数量" />
+		<property name="testOnReturn" description="归还连接时执行validationQuery检测连接是否有效，配置为true会降低性能" />
+		<property name="removeAbandonedTimeout" description="超过时间限制多长" />
+		<property name="validationQuery" description="用来检测连接是否有效的sql，要求是一个查询语句 " />
+		<property name="removeAbandoned" description="超过时间限制是否回收" />
+		<property name="minIdle" description="最小空闲连接数" />
+	</group>
+	<script>
+		<generate template="bean.xml" />
+	</script>
+</config>
